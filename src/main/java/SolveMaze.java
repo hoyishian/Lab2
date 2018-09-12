@@ -47,12 +47,16 @@ public class SolveMaze {
 //                    maze.move();
 //                }
 //            }
+            //Walk Forward if possible
             while (!maze.isFinished()) {
                 if (maze.canMove()) {
                     maze.move();
+                    // If not possible to walk forward, turn left or right. Use Math.random (where it is a number
+                    // between 0 and 1, 1 not included, and if Math.random is more than 0.5, turn right.
                 } else {
                     if (Math.random() > 0.5) {
                         maze.turnRight();
+                        // If less than 0.5, turn left
                     } else {
                         maze.turnLeft();
                     }
